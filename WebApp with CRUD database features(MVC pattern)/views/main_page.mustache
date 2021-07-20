@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+  <title>Employee Management Application</title>
+  <style>
+    td {border: 2px solid black; padding: 5px; text-align: center; background-color: #f1f1f1;}
+    th {border: 2px solid black; font-size:16px; padding: 10px; background-color: #92a8d1;}
+    ul {font-size: 20px; color: red; }
+    h1 {text-align: center;}
+    select {padding: 16px 20px; border: none; border-radius: 4px; background-color: #f1f1f1; font-size:14px;}
+
+  </style>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container-fluid">
+
+  <h1>Employee Management Application</h1>
+  <h2>Employee records</h2>
+  <table>
+    <tr>
+      <th><a href="/asc/rowid"><i class="fa fa-arrow-up"></i></a>ID<a href="/desc/rowid"><i class="fa fa-arrow-down"></i></a></th>
+      <th><a href="/asc/firstname"><i class="fa fa-arrow-up"></i></a>First Name<a href="/desc/firstname"><i class="fa fa-arrow-down"></i><a/></th>
+      <th><a href="/asc/lastname"><i class="fa fa-arrow-up"></i></a>Last Name<a href="/desc/lastname"><i class="fa fa-arrow-down"></i></a></th>
+      <th><a href="/asc/salary"><i class="fa fa-arrow-up"></i></a>Salary <a href="/desc/salary"><i class="fa fa-arrow-down"></i></a></th>
+      <th>Role</th>
+      <th>Delete</th>
+      <th>Update</th>
+      <th>Promote</th>
+    </tr>
+
+    {{#employees}}
+    <tr>
+      <td>{{rowid}}</td>
+      <td>{{firstname}}</td>
+      <td>{{lastname}}</td>
+      <td>{{salary}}</td>
+      <td>{{role}}</td>
+      <td><a href="/delete/{{rowid}}">D</a></td>
+      <td><a href="/updateform/{{rowid}}">U</a></td>
+      <td><a href="/promote/{{rowid}}">P</a></td>
+    </tr>
+    {{/employees}}
+  </table>
+
+  <br><p><a href="/random">Randon</a>
+  <p><a href="/layoff">Layoff</a>
+  <p><a href="/addform">Add employee</a>
+    {{#addemployee}}
+
+      <form class="form-group col-sm-4" action="/addemployee">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" {{#errors.firstname}} class="form-control is-invalid" {{/errors.firstname}} name="firstname"></br>
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" {{#errors.lastname}} class="form-control is-invalid" {{/errors.lastname}} name="lastname"></br>
+        <label for="salary">Salary</label>
+        <input type="text" class="form-control" {{#errors.salary}} class="form-control is-invalid" {{/errors.salary}} name="salary"></br>
+        <label for="role">Role</label>
+        <select name="role" class="form-control-sm">
+          <option value="Manager">Manager</option>
+          <option value="Tester">Tester</option>
+          <option value="Devloper">Developer</option>
+        </select></br></br>
+
+        <input type="submit" class="btn btn-primary" value="Submit" >
+      </form>
+    {{/addemployee}}
+  {{#updateemployee}}
+    <form class="form-group col-sm-4" action="/updateemployee/{{updateid}}">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" value="{{formdata.firstname}}" name="firstname" {{#errors.firstname}} class="form-control is-invalid" {{/errors.firstname}}></br>
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" value="{{formdata.lastname}}" name="lastname" {{#errors.lastname}} class="form-control is-invalid" {{/errors.lastname}}></br>
+      <label for="salary">Salary</label>
+      <input type="text" class="form-control" value="{{formdata.salary}}" name="salary" {{#errors.salary}} class="form-control is-invalid" {{/errors.salary}}></br>
+      <label for="role">Role</label>
+      <select name="role" class="form-control-sm">
+        <option value="Manager">Manager</option>
+        <option value="Tester">Tester</option>
+        <option value="Devloper">Developer</option>
+      </select></br></br>
+
+      <input type="submit" class="btn btn-primary" value="Submit" >
+    </form>
+  {{/updateemployee}}
+
+<ul>
+  {{#errors.firstname}}
+    <li>{{errors.firstname}}</li>
+  {{/errors.firstname}}
+  {{#errors.lastname}}
+    <li>{{errors.lastname}}</li>
+  {{/errors.lastname}}
+  {{#errors.salary}}
+    <li>{{errors.salary}}</li>
+  {{/errors.salary}}
+</ul>
+
+
+</body>
+</html>
