@@ -1,0 +1,27 @@
+Create 5 commands according to the below restrictions, and give a definition and specific example of each command in a file named commands.txt.  Your commands.txt file should also include the e-mail and password for your Twilio account at the top of the file (I’ll have to login to add my cell as a verified number in order to test it)
+
+Twilio username: bakshort_12@hotmail.com
+Password: Abc@1234567890
+
+phone number: +12062226217
+
+Bot Description: This sms bot allows a user to check any stock latest price. This bot also allows to save any specific value to redis database and let user retrieve saved value from redis database.
+
+Stock exchange API:https://financialmodelingprep.com/api/v3/company/profile/{{STOCK_NAME}}
+
+5 Commands:
+
+1) Example : Stockprice AAPL
+Description: Above command will bring AAPL current stock price using API.
+
+2) Example : Info AAPL
+Description: Above command will pull stock company description/information.
+
+3) Example : Save emplyeeid 1122
+Description: This will assign any data e.g 1122 to object e.g employeeid and save into Redis database
+
+4) Example : Read emplyeeid
+Description: This will read or get assign data to object e.g employeeid from Redis database
+
+5) Example : About
+Description: This command lets the user know how the bot works and what it does.
