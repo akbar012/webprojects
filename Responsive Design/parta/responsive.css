@@ -1,0 +1,26 @@
+@media screen and (max-width:800px)
+{
+	#social {width:0%;}
+}
+
+@media screen and (max-width:600px) 
+{
+  .bar a { width: 100%;}
+
+  .left { width: 100%;}
+
+  .middle { width: 100%;}
+
+  .right { width: 100%;}
+
+  .ad { width: 0%;}
+}
+
+@media screen and (max-width:600px) 
+{
+  .left { font-style: italic;}
+  h2 { color: red;}
+  #footer { font-size: 24px;}
+      h1 {text-transform: uppercase;}
+      h1 { font-size: 40px;}
+}

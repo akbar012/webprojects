@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    * { box-sizing: border-box; }
+
+    .column {
+      float: left;
+      padding: 5px;  
+    }
+
+    .left { 
+      width: 30%; 
+    }
+
+    .right { 
+      width: 20%;
+    }
+
+    .middle {
+      width: 50%;
+    }
+
+    .bar {
+      background-color: #333;
+      overflow: hidden;  
+    }
+
+    .bar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .bar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #footer { 
+      padding: 16px; 
+      color: #f2f2f2;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .ad {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+	
+	#social {
+	  margin-left: auto;
+	  margin-right: auto;
+	  display: block;
+	}
+  </style>
+  <link rel="stylesheet" type="text/css" href="responsive.css">
+  <title>CBC News</title>
+</head>
+<body>
+
+  <div class="header">
+    <h1>CBC News</h1>
+  </div>
+
+  <div class="bar">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+
+  <div class="row">
+
+    <div class="column left">
+      <h2>Breaking News</h2>
+      <ul>
+	    <li>Forecasters call for weather on Monday</li>
+	    <li>Breathing oxygen linked to staying alive</li>
+	    <li>Mounties raid gun shop, find weapons</li>
+	  </ul>
+	
+      <div>
+	    <a href="https://www.mcdonalds.ca" target="_blank">
+	      <img class="ad" src="mcd.jpg" />
+	    </a>
+	  </div> 
+	  <br />
+	
+    </div>
+  
+    <div class="column middle">
+      <h2>News article</h2>
+      <p>World on fire. Prospects for the future, not good.</p>
+
+      <h2>Puff piece</h2>
+      <p>Local business leader has all the answers.</p>
+		 
+      <h2>Opinion piece</h2>
+      <p>Looks like those clowns in parliament did it again. What a bunch of clowns.</p>
+    </div>
+  
+    <div class="column right">
+      <h2>Social media</h2>
+      <p>The latest updates from Twitter...</p>
+	
+      <div>
+	    <img src="twitter.png" id="social">
+	  </div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div id="footer">Copyright © 2020 CBC News. All rights reserved.</div>
+  </div>
+
+</body>
+</html>
