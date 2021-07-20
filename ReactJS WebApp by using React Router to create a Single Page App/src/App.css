@@ -1,0 +1,29 @@
+.active
+{
+  color: red;
+}
+
+.nav
+{
+  display: inline;
+}
+
+.topBar
+{
+  background-color: #444;
+  padding: 16px;
+}
+
+
+h2 { margin-left: 1rem;}
+
+li a{
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  font-weight: bold;
+}
+
+li a:hover {
+  background-color: #111;
+}
