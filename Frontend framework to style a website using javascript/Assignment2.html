@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Assignment 2</title>
+</head>
+<body>
+  <br />
+
+  <div class="container">
+
+  <form onsubmit="return validator()"
+       action="https://csunix.mohawkcollege.ca/tooltime/echo.php">
+
+
+
+
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
+    <br />
+
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br />
+
+    <label for="confirm">Confirm:</label>
+    <input type="password" name="confirm" id="confirm">
+    <br />
+
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age">
+    <br /><br />
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+    <br /><br />
+
+    <input class="btn btn-secondary" type="reset" value="Reset">
+
+  </form>
+
+  <br />
+  <div id="output"></div>
+<script>
+
+function validator()
+{
+
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var confirm = document.getElementById("confirm").value;
+  var age = document.getElementById("age").value
+  var letters = /^[A-Za-z]+$/;
+
+  myerrs = "";
+  if (!username == "")
+  {
+   if (!username.match(letters))
+   {
+    myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+    "Username should contain only the characters a-z (uppercase or lowercase)" +
+    "</div>";
+   }
+
+  else {if ((username.length < 5) || (username.length > 15)) myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+  "Username should be between 5 and 15 characters long" +
+  "</div>";}
+  }
+
+  else { myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+  "Username field has been left blank" +
+  "</div>";}
+
+  if (password == ""){ myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+  "Password field has been left blank" +
+  "</div>";}
+  //if (password == ""){ myerrs += "Password field has been left blank <br/> <br/>";}
+  if (confirm == ""){ myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+  "Confirm field has been left blank" +
+  "</div>";}
+  else if (password !== confirm)
+  {
+    myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+    "Passwords do not match!" +
+    "</div>";
+  }
+
+ if (age == ""){myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+ "Age field has been left blank" +
+ "</div>";}
+ else {
+  if (isNaN(age)) {
+    myerrs += "<div class=\"alert alert-danger\" role=\"alert\">" +
+    "Age should be a positive integer" +
+    "</div>";
+  }
+  else {if (age < 18 || age > 110) myerrs += "Age should be between the values 18 and 110  <br/> <br/>";}
+}
+  if (myerrs.length == 0)
+  {
+
+    return true;
+  }
+
+  else
+  {
+    document.getElementById("output").innerHTML = myerrs;
+    return false;
+  }
+  "<div class=\"alert alert-danger\" role=\"alert\">" +
+  "Age should be a positive integer" +
+  "</div>";
+
+}
+
+</script>
+</body>
+</html>
