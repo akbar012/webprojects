@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <title>Student Payment Form</title>
+    <style>
+
+
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      select {
+        width: 100%;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        font-size:14px;
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+      }
+
+      input[type=button], input[type=submit], input[type=reset] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      .success {
+        font-size: 20px;
+        color: green;
+      }
+
+      .error {
+      	font-size: 20px;
+      	color: red;
+      }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+<body>
+
+  <!-- Form solution code here !-->
+<div class="container"></div>
+
+  <h1>Student Payment Form</h1>
+
+  <form onsubmit="return validator()"
+
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname" id="firstname">
+
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" name="lastname">
+
+      <label for="studentid">Student ID</label>
+      <input type="text" name="studentid" id="studentid">
+
+      <label for="tuition">Tuition</label>
+      <input type="text" name="tuition" id="tuition">
+
+      <label for="paymentmethods">Payment Method</label>
+
+      <select id="paymentmethods">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="debit">Debit</option>
+        <option value="credit" selected>Credit</option>
+      </select>
+
+
+      <input class=button type="submit" value="Submit" >
+
+      <input class=button type="button" value="Random" id= "random">
+
+      <input class=button type="button" value="Log" id="log">
+
+
+  </form>
+
+  <br />
+
+    <div id="output" </div>
+
+
+<script>
+
+$("#random").click(function(){
+  $.get( "http://localhost:3000/random",
+         {},
+         function(data) {
+
+           $("#firstname").val( data.firstname );
+           $("#lastname").val( data.lastname );
+           $("#studentid").val( data.studentid );
+           $("#tuition").val( data.tuition );
+           $("#paymentmethods").val( data.method.toLowerCase() );
+         },
+         "json");
+});
+
+
+$("#log").click(function(){
+  window.location.href = "http://localhost:3000/log.txt";
+});
+
+  function validator()
+  {
+
+      $.get( "http://localhost:3000/submit",
+             { "firstname" : $("#firstname").val(),
+               "lastname" : $("#lastname").val(),
+               "studentid" : $("#studentid").val(),
+               "tuition" : $("#tuition").val(),
+               "paymentmethods" :$("#paymentmethods").val() },
+
+             function (data) {
+
+              var list="<ul>";
+              var count=1;
+
+
+                if(data.success != 1){
+                list += data.firstname;
+              } else {count =0;}
+
+                if(data.success != 2){
+                list += data.lastname ;
+              } else {count =0;}
+
+                if(data.success != 3){
+                list += data.studentid;
+              } else {count =0;}
+
+                if(data.success != 4){
+                list += data.tuition;
+              } else {count =0;}
+
+
+      if(count != 1){
+              $("#output").html("Payment Successful!!");
+              $("#output").removeClass("error");
+              $("#output").addClass("success");}
+
+      else   {
+              $("#output").html(list);
+              $("#output").removeClass("success");
+              $("#output").addClass("error");}
+
+            },
+             "json");
+
+return false;
+}
+
+
+
+
+</script>
+</body>
+</html>

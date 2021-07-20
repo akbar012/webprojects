@@ -1,0 +1,8 @@
+Nawal,Patel,043127189,4621,Bitcoin
+Li,Fang,025193705,2890,Bitcoin
+Larissa,Black,050366991,4524,Debit
+Ying,Abaza,007982824,6485,Credit
+Wang,Browne,088239951,6822,Debit
+Ying,Fang,025298826,6773,Bitcoin
+Wang,Patel,068030440,5415,Credit
+
