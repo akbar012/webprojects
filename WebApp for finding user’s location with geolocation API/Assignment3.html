@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Assignment3</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <p></p>
+
+
+  <button id="locate" class="btn btn-primary">Geolocate</button>
+  <button id="hosp" class="btn btn-secondary">Hospitals</button>
+  <button id="fire" class="btn btn-success">Fire Station</button>
+  <button id="sch" class="btn btn-danger">Schools</button>
+  <button id="wfall" class="btn btn-warning">Waterfalls</button>
+  <button id="cl" class="btn btn-info">Clear</button>
+<p></p>
+
+  <h2 id="myMap" style="width:600px;height:600px;"></h2>
+  </div>
+
+
+  <script src="hos.js"></script>
+  <script src="f.js"></script>
+  <script src="sc.js"></script>
+  <script src="wf.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://www.bing.com/api/maps/mapcontrol?key=AhuY8V0QPrq_EE63V7bVsOUiBUMwzOyj2VK-IgxsIlM8M_BM2YVWRdDwFpK3evBX&callback=loadmap" async defer></script>
+  <script>
+
+  function loadmap()
+  {
+     var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+     function successFunction(position)
+     {
+
+       var location = new Microsoft.Maps.Location(43.251017, -79.83205);
+       // Optional
+       var pushpin = new Microsoft.Maps.Pushpin(location, { "title" : "64 Melrose Ave N, Hamilton, Ontario" });
+
+       map.entities.push(pushpin);
+
+     }
+
+     navigator.geolocation.getCurrentPosition( successFunction );
+  }
+
+//-------------------------------Geolocation _____________________
+   $(document).ready( function() {
+
+     $("#locate").click( function(){
+         $("#myMap").html(function loadmap()
+         {
+            var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {} );
+
+
+            function successFunction(position)
+            {
+              var location = new Microsoft.Maps.Location(
+                position.coords.latitude,
+                position.coords.longitude
+              );
+              var pushpin = new Microsoft.Maps.Pushpin(location,
+                                                       { color: 'blue', title : 'Current Location',  icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png',
+                                                                                      anchor: new Microsoft.Maps.Point(12, 39),
+                                                                                      textOffset: new Microsoft.Maps.Point(0, 5)});
+              map.entities.push(pushpin);
+             //console.log(position); var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), { color: 'red' });
+            }
+
+            function failureFunction(error)
+            {
+            var errormessage = "";
+              switch (error.code)
+              {
+                 case error.PERMISSION_DENIED:
+                   errormessage = "Error: Location could not be found";
+                   break;
+                 case error.POSTION_UNAVAILABLE:
+                   errormessage = "Location is not unavailable";
+                   break;
+                case error.TIMEOUT:
+                  errormessage = "The request to get the user location timed out".
+                  break;
+                case error.UNKNOWN_ERROR:
+                  errormessage = "An unknown error occurred";
+                  break;
+             }
+
+              document.getElementById("myMap").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">" +
+              errormessage +
+              "</div>";
+              var myVar = setTimeout(loadmap, 7000);
+
+            }
+
+            navigator.geolocation.getCurrentPosition( successFunction, failureFunction);
+
+
+         });
+     });
+//-------------------------------Hospital _____________________
+$("#hosp").click( function(){
+    $("#myMap").html(function loadmap()
+    {
+       var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+       function successFunction(position)
+       {
+
+
+
+       for (i = 0; i < hos.length; i++)
+        {
+         var location = new Microsoft.Maps.Location(
+                        hos[i].LATITUDE,
+                        hos[i].LONGITUDE );
+         var pushpin = new Microsoft.Maps.Pushpin(location,
+                         {"title" : hos[i].NAME} );
+         map.entities.push(pushpin);
+        }
+       }
+       navigator.geolocation.getCurrentPosition( successFunction );
+    });
+});
+//-------------------------------fire Station_____________________
+$("#fire").click( function(){
+    $("#myMap").html(function loadmap()
+    {
+       var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+       function successFunction(position)
+       {
+
+
+
+       for (i = 0; i < f.length; i++)
+        {
+         var location = new Microsoft.Maps.Location(
+                        f[i].LATITUDE,
+                        f[i].LONGITUDE );
+         var pushpin = new Microsoft.Maps.Pushpin(location,
+                         {"title" : f[i].NAME} );
+         map.entities.push(pushpin);
+        }
+       }
+       navigator.geolocation.getCurrentPosition( successFunction );
+    });
+});
+//-------------------------------Schools_____________________
+
+$("#sch").click( function(){
+    $("#myMap").html(function loadmap()
+    {
+       var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+       function successFunction(position)
+       {
+
+
+
+       for (i = 0; i < sc.length; i++)
+        {
+         var location = new Microsoft.Maps.Location(
+                        sc[i].LATITUDE,
+                        sc[i].LONGITUDE );
+         var pushpin = new Microsoft.Maps.Pushpin(location,
+                         {"title" : sc[i].NAME} );
+         map.entities.push(pushpin);
+        }
+       }
+       navigator.geolocation.getCurrentPosition( successFunction );
+    });
+});
+//-------------------------------Waterfalls_____________________
+
+$("#wfall").click( function(){
+    $("#myMap").html(function loadmap()
+    {
+       var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+       function successFunction(position)
+       {
+
+
+
+       for (i = 0; i < wf.length; i++)
+        {
+         var location = new Microsoft.Maps.Location(
+                        wf[i].LATITUDE,
+                        wf[i].LONGITUDE );
+         var pushpin = new Microsoft.Maps.Pushpin(location,
+                         {"title" : wf[i].NAME} );
+         map.entities.push(pushpin);
+        }
+       }
+       navigator.geolocation.getCurrentPosition( successFunction );
+    });
+});
+//------------------------------------------_____________________
+
+
+$("#cl").click( function(){
+    $("#myMap").html(function loadmap()
+    {
+       var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {center: new Microsoft.Maps.Location(43.251017, -79.83205)} );
+
+       function successFunction(position)
+       {
+
+         map.entities.removeAt(pushpin);
+
+       }
+       navigator.geolocation.getCurrentPosition( successFunction );
+    });
+});
+//------------------------------------------_____________________
+
+
+  });
+  </script>
+</body>
+</html>

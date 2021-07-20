@@ -1,0 +1,30 @@
+﻿X,Y,OBJECTID,SNO,NAME,ALTERNATE_NAME,COMMUNITY,TYPE,RANKING,CLUSTER_AREA,HEIGHT_IN_M,WIDTH_IN_M,OWNERSHIP,ACCESS_FROM,LONGITUDE,LATITUDE
+586171,4788545,30,81,East Iroquoia Falls,N/A,Hamilton,Waterfall,B,Chedoke-Scenic,20,1.2,public,Hwy 403,-79.93857605503914,43.24478309110776
+599031,4784656,31,82,Veevers Falls,N/A,Hamilton,Cascade,C,Felker,14,2.5,private,Greenhill Ave.,-79.78090203240046,43.20819236184315
+590022,4788461,35,113,Auchmar Falls,Upper Beckett Falls,Hamilton,Waterfall,C,Chedoke,12,1.5,public,Beckett Drive,-79.89116304154824,43.24357691086948
+590452,4788610,37,99,Beckett Falls,Lower Beckett Falls,Hamilton,Waterfall,C,Chedoke,3,1.2,public,Beckett Drive,-79.88584309038085,43.244866900531335
+598499,4784263,43,103,Heritage Green Falls,Taro Falls,Hamilton,Waterfall,B,Felker,12.2,1.8,public,Ackland Street,-79.78751973936322,43.204723876926955
+596724,4783990,44,109,Middle Glendale Falls,N/A,Hamilton,Cascade,C,Red Hill,3.1,3.4,public,Bruce Trail,-79.80941235971785,43.202495565018346
+598464,4784239,45,110,Mountain Spring Falls,N/A,Hamilton,Waterfall,B,Felker,15,2.4,public,Ackland Street,-79.7879547579588,43.20451237578572
+596164,4783828,47,123,Pritchard Falls,N/A,Hamilton,Waterfall,C,Red Hill,4.5,1,public,Mountain Brow Blvd. / King's Forest Park,-79.81633222179092,43.2011086248597
+595034,4782623,48,126,Billy Monkley Cascade,N/A,Hamilton,Cascade,C,Red Hill,3,6.4,public,Chippewa Rail Trail via Rymal Road/Billy Monkley Bird Sanctuary,-79.83044558432469,43.190403176771966
+596170,4785287,49,122,Broman Falls,Coop's Falls,Hamilton,Waterfall,C,Red Hill,7,1.1,public,Bruce Trail Escarpment Rail Trail at Mohawk Sports Park,-79.8160043239796,43.214242999664556
+595895,4783719,50,130,Baby Albion Falls,N/A,Hamilton,Waterfall,C,Red Hill,8.5,1,public,Mountain Brow Blvd. / King's Forest Park,-79.81966153077211,43.20016151951136
+586016,4788500,56,80,West Iroquoia Falls,N/A,Hamilton,Waterfall,B,Chedoke-Scenic,19.8,1,public,Hwy 403,-79.94049199184443,43.24439564651954
+586478,4788482,4,33,Scenic Falls,N/A,Hamilton,Cascade,A,Chedoke-Scenic,20,6,public,Scenic Dr. / Chedoke Radial Trail Head,-79.93480506087934,43.24418074609277
+586872,4788682,5,34,Lower Princess Falls,Lower Lang's Falls,Hamilton,Cascade,A,Chedoke-Scenic,39.5,3,public,Hwy 403,-79.92992126400262,43.245936082928246
+586872,4788671,6,35,Princess Falls,"Lang's Falls, Upper Princess Falls, Westerly Falls on Chedoke Radial Trail",Hamilton,Waterfall,B,Chedoke-Scenic,7,2,public,Scenic Dr. / Chedoke Radial Trail Land,-79.92992299769048,43.245837048511135
+588109,4788588,7,36,Upper Sanatorium Falls,"Ravine Mountain Sanatorium, Sanatorium Falls",Hamilton,Cascade,C,Chedoke-Mountview,9,3,public,Sanatorium Rd. / Chedoke Civic Golf Course,-79.91470173654479,43.24494625709709
+588087,4788703,8,37,Lower Sanatorium Cascade,Lower Sanatorium Falls,Hamilton,Cascade,C,Chedoke-Mountview,4,3,public,Beddoe Dr. / Chedoke Civic Golf Course,-79.91495429979956,43.24598418231666
+587561,4788642,9,38,Mountview Falls,"Goulding Falls, Water Fall on the Mountain, Easterly Falls on Chedoke Radial Trail",Hamilton,Cascade,B,Chedoke-Mountview,10,6,public,Scenic Dr. / Chedoke Radial Trail Land,-79.92144206915387,43.24549626058113
+588618,4788677,10,39,Lower Westcliffe Falls,West Double Falls,Hamilton,Cascade,B,West Chedoke,9,6,public,Beddoe Dr. / Chedoke Civic Golf Course,-79.90841884286067,43.24568788061153
+588623,4788675,11,40,Lower Cliffview Falls,East Double Falls,Hamilton,Cascade,B,West Chedoke,4,3,public,Beddoe Dr. / Chedoke Civic Golf Course,-79.90835758625731,43.24566928681511
+588610,4788645,12,41,Westcliffe Falls,N/A,Hamilton,Cascade,A,West Chedoke,15,2,public,Beddoe Dr. / Chedoke Civic Golf Course,-79.90852251218865,43.24540072270281
+588666,4788519,13,42,Cliffview Falls,N/A,Hamilton,Cascade,A,West Chedoke,15,3,public,Beddoe Dr. / Chedoke Civic Golf Course / Scenic Dr. / Cliffview Park,-79.90785310757677,43.24425975342982
+589270,4788525,14,43,Lower Chedoke Falls,N/A,Hamilton,Cascade,A,Chedoke,6,11,public,Beddoe Dr. / Chedoke Civic Golf Course,-79.90041368177135,43.24424250690414
+589254,4788245,15,45,Chedoke Falls,N/A,Hamilton,Waterfall,A,Chedoke,18,9,public,Beddoe Dr. / Chedoke Civic Golf Course / Scenic Dr,-79.9006560601081,43.241723548041556
+596704,4783965,16,46,Upper Glendale Falls,Glendale Falls,Hamilton,Waterfall,C,Red Hill,3,3,public,Kingsview Dr.,-79.8096628664032,43.20227305588562
+595894,4784292,17,47,Buttermilk Falls,Inglis Falls,Hamilton,Waterfall,A,Red Hill,23,8,public,Mountain Brow Blvd. / Oak-Knoll Park,-79.81957437007289,43.20532028293186
+595897,4783744,18,48,Albion Falls,Mount Albion Falls,Hamilton,Cascade,A,Red Hill,19,18,public,Mountain Brow Blvd. / King's Forest Park,-79.81963257925828,43.20038633704761
+598382,4784486,19,49,Little Davis Falls,Lower Felker's Falls,Hamilton,Waterfall,B,Felker,3,8,public,Quigley Rd.,-79.7889199226019,43.20674674348467
+598287,4784126,20,50,Felker's Falls,N/A,Hamilton,Waterfall,A,Felker,22,6,public,Ackland St. / Felker's Falls CA,-79.79015317390864,43.20351812423371
